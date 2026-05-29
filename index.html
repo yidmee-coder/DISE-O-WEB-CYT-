@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SciTech Kids - Ciencia y Tecnología para Primaria</title>
+    <meta name="description" content="Plataforma educativa e interactiva de Ciencia y Tecnología para niños de educación primaria. Aprende jugando sobre el Sistema Solar, la Materia, el Cuerpo Humano y el Reciclaje.">
+    <!-- Google Fonts: Outfit (modern, high-end) y Fredoka (friendly, ideal para niños) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Fondo decorativo dinámico -->
+    <div class="stars-background"></div>
+    <div class="blob-glow blob-1"></div>
+    <div class="blob-glow blob-2"></div>
+
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-area" id="btn-home-logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" width="48" height="48">
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="var(--accent-primary)" />
+                            <stop offset="100%" stop-color="var(--accent-secondary)" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="url(#logo-grad)" stroke-width="8" stroke-dasharray="200 40" class="logo-ring" />
+                    <circle cx="50" cy="50" r="15" fill="url(#logo-grad)" class="logo-nucleus" />
+                    <circle cx="20" cy="35" r="6" fill="var(--accent-tertiary)" class="logo-electron-1" />
+                    <circle cx="80" cy="65" r="6" fill="var(--accent-tertiary)" class="logo-electron-2" />
+                </svg>
+                <h1 class="logo-title">SciTech <span>Kids</span></h1>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-link active" data-target="dashboard">
+                    <span class="icon">🏠</span>
+                    <span class="text">Inicio</span>
+                </button>
+                <button class="theme-toggle" id="theme-toggle-btn" aria-label="Cambiar tema de color">
+                    <span class="theme-icon-light">☀️</span>
+                    <span class="theme-icon-dark">🌙</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- SECCIÓN 1: DASHBOARD (PANEL CENTRAL) -->
+        <section id="view-dashboard" class="app-view active">
+            <div class="hero-section">
+                <span class="badge">🚀 ¡Descubre el Científico que llevas dentro!</span>
+                <h2 class="hero-title">Laboratorio Divertido de Ciencia y Tecnología</h2>
+                <p class="hero-subtitle">Explora el universo, experimenta con los estados de la materia, descubre cómo funciona tu cuerpo y ayuda a salvar nuestro planeta jugando.</p>
+            </div>
+
+            <div class="apps-grid">
+                <!-- Tarjeta 1: Sistema Solar -->
+                <article class="app-card" data-app="solar-system" style="--card-accent: var(--accent-primary);">
+                    <div class="card-icon-wrapper">
+                        🪐
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag tag-astronomia">Astronomía</span>
+                        <h3 class="card-title">Viaje por el Sistema Solar</h3>
+                        <p class="card-description">Explora los planetas en órbita, descubre datos curiosos y pon a prueba tus conocimientos en la trivia galáctica.</p>
+                        <button class="card-btn">¡Despegar! 🚀</button>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 2: Laboratorio de Materia -->
+                <article class="app-card" data-app="matter-lab" style="--card-accent: var(--accent-secondary);">
+                    <div class="card-icon-wrapper">
+                        🧪
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag tag-quimica">Química y Física</span>
+                        <h3 class="card-title">Laboratorio de la Materia</h3>
+                        <p class="card-description">Ajusta el calentador y observa cómo bailan los átomos en estado Sólido, Líquido y Gaseoso. ¡Es súper divertido!</p>
+                        <button class="card-btn">¡Experimentar! ⚗️</button>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 3: Eco-Clasificador -->
+                <article class="app-card" data-app="recycling-game" style="--card-accent: var(--accent-success);">
+                    <div class="card-icon-wrapper">
+                        ♻️
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag tag-ecologia">Ecología y Tecnología</span>
+                        <h3 class="card-title">Eco-Clasificador</h3>
+                        <p class="card-description">Conviértete en un superhéroe ambiental. Clasifica los residuos orgánicos, plásticos y cartón antes de que se acabe el tiempo.</p>
+                        <button class="card-btn">¡Reciclar! 🗑️</button>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 4: Cuerpo Humano -->
+                <article class="app-card" data-app="human-body" style="--card-accent: var(--accent-tertiary);">
+                    <div class="card-icon-wrapper">
+                        🫁
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag tag-biologia">Biología humana</span>
+                        <h3 class="card-title">Explorador del Cuerpo</h3>
+                        <p class="card-description">Viaja al interior de ti mismo. Descubre el maravilloso funcionamiento del cerebro, corazón, pulmones y estómago.</p>
+                        <button class="card-btn">¡Explorar! 🧠</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- CONTENEDOR GENÉRICO PARA LA MINI-APP ACTIVA -->
+        <section id="view-app-container" class="app-view">
+            <div class="app-container-header">
+                <button class="btn-back" id="btn-back-to-dashboard">
+                    <span class="icon">⬅️</span> Volver al Panel
+                </button>
+                <div class="app-meta">
+                    <span class="app-active-tag" id="app-tag-label">Astronomía</span>
+                    <h2 class="app-active-title" id="app-title-label">Viaje por el Sistema Solar</h2>
+                </div>
+            </div>
+
+            <!-- Zona de Carga Dinámica de la App -->
+            <div class="app-viewport glassmorphism" id="app-viewport-content">
+                
+                <!-- APP 1: SISTEMA SOLAR -->
+                <div id="subapp-solar-system" class="subapp-content">
+                    <div class="solar-layout">
+                        <div class="solar-simulation-area">
+                            <div class="solar-system-orbit-container" id="solar-orbits">
+                                <div class="sun">🔥</div>
+                                
+                                <!-- Planeta Mercurio -->
+                                <div class="orbit" style="--orbit-size: 130px; --orbit-speed: 6s;">
+                                    <div class="planet planet-mercury" data-planet="mercurio" style="--planet-color: #a1a1a1; --planet-size: 12px;" title="Mercurio">🪨</div>
+                                </div>
+                                <!-- Planeta Venus -->
+                                <div class="orbit" style="--orbit-size: 190px; --orbit-speed: 10s;">
+                                    <div class="planet planet-venus" data-planet="venus" style="--planet-color: #e3bb76; --planet-size: 20px;" title="Venus">🪐</div>
+                                </div>
+                                <!-- Planeta Tierra -->
+                                <div class="orbit" style="--orbit-size: 260px; --orbit-speed: 15s;">
+                                    <div class="planet planet-earth" data-planet="tierra" style="--planet-color: #3b82f6; --planet-size: 22px;" title="Tierra">
+                                        🌍
+                                        <div class="moon"></div>
+                                    </div>
+                                </div>
+                                <!-- Planeta Marte -->
+                                <div class="orbit" style="--orbit-size: 330px; --orbit-speed: 20s;">
+                                    <div class="planet planet-mars" data-planet="marte" style="--planet-color: #ef4444; --planet-size: 16px;" title="Marte">🔴</div>
+                                </div>
+                                <!-- Planeta Júpiter -->
+                                <div class="orbit" style="--orbit-size: 420px; --orbit-speed: 35s;">
+                                    <div class="planet planet-jupiter" data-planet="jupiter" style="--planet-color: #d4a373; --planet-size: 38px;" title="Júpiter">🪐</div>
+                                </div>
+                            </div>
+                            <p class="simulation-instruction">💡 Haz clic en cualquier planeta para explorar sus misterios en el panel de investigación.</p>
+                        </div>
+
+                        <div class="solar-info-panel glassmorphism">
+                            <div id="solar-planet-details">
+                                <div class="info-placeholder">
+                                    <span class="info-placeholder-icon">🪐</span>
+                                    <h3>Panel de Exploración Galáctica</h3>
+                                    <p>Selecciona un planeta orbitando alrededor del Sol para escanear sus datos misteriosos, su temperatura, tamaño y composición.</p>
+                                </div>
+                            </div>
+                            <div class="solar-quiz-box">
+                                <h4>🏆 Trivia del Espacio</h4>
+                                <div id="solar-quiz-content">
+                                    <p id="quiz-question">¿Cuál es el planeta más grande de nuestro Sistema Solar?</p>
+                                    <div class="quiz-options">
+                                        <button class="btn-quiz-option" data-correct="false">Tierra</button>
+                                        <button class="btn-quiz-option" data-correct="true">Júpiter</button>
+                                        <button class="btn-quiz-option" data-correct="false">Marte</button>
+                                    </div>
+                                    <p id="quiz-feedback" class="quiz-feedback-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- APP 2: LABORATORIO DE MATERIA -->
+                <div id="subapp-matter-lab" class="subapp-content">
+                    <div class="matter-layout">
+                        <div class="matter-control-panel glassmorphism">
+                            <h3>🔬 Panel de Temperatura</h3>
+                            <p>¡Modifica la temperatura y observa cómo las partículas de agua cambian de estado físico!</p>
+                            
+                            <div class="thermometer-wrapper">
+                                <div class="temp-display">
+                                    <span id="txt-temperature">20</span>°C
+                                    <span class="state-badge" id="lbl-matter-state">Líquido 💧</span>
+                                </div>
+                                <input type="range" id="range-temperature" min="-50" max="150" value="20" class="temp-slider">
+                                <div class="slider-labels">
+                                    <span>❄️ Congelar (-50°C)</span>
+                                    <span>🔥 Hervir (150°C)</span>
+                                </div>
+                            </div>
+
+                            <div class="state-buttons">
+                                <button class="btn-state-preset" data-temp="-20">❄️ Sólido (Hielo)</button>
+                                <button class="btn-state-preset active" data-temp="25">💧 Líquido (Agua)</button>
+                                <button class="btn-state-preset" data-temp="110">💨 Gas (Vapor)</button>
+                            </div>
+
+                            <div class="educational-card">
+                                <h4>💡 Explicación Científica</h4>
+                                <p id="lbl-matter-explanation">En el estado <strong>Líquido</strong>, las moléculas de agua están juntas pero se mueven y resbalan unas sobre otras. Tienen volumen fijo pero toman la forma del recipiente.</p>
+                            </div>
+                        </div>
+
+                        <div class="matter-simulation-area">
+                            <div class="beaker-container">
+                                <div class="beaker-glass">
+                                    <canvas id="matter-canvas" width="340" height="340"></canvas>
+                                    <div class="beaker-labels">
+                                        <span>AGUA (H₂O)</span>
+                                    </div>
+                                </div>
+                                <div class="burner-flame" id="flame-element"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- APP 3: ECO-CLASIFICADOR -->
+                <div id="subapp-recycling-game" class="subapp-content">
+                    <div class="game-top-bar">
+                        <div class="score-board">🏆 Puntos: <span id="game-score">0</span></div>
+                        <div class="game-timer">⏰ Tiempo: <span id="game-timer-val">45</span>s</div>
+                        <button class="btn-game-action" id="btn-start-game">¡Empezar Juego! 🎮</button>
+                    </div>
+
+                    <div class="game-play-area">
+                        <div class="bins-container">
+                            <!-- Contenedor Orgánico -->
+                            <div class="trash-bin bin-organic" data-bin="organic">
+                                <div class="bin-cap"></div>
+                                <div class="bin-body">
+                                    <span class="bin-icon">🍎</span>
+                                    <span class="bin-title">Orgánico</span>
+                                </div>
+                            </div>
+                            <!-- Contenedor Plástico/Vidrio -->
+                            <div class="trash-bin bin-plastic" data-bin="plastic">
+                                <div class="bin-cap"></div>
+                                <div class="bin-body">
+                                    <span class="bin-icon">🍾</span>
+                                    <span class="bin-title">Plásticos / Vidrio</span>
+                                </div>
+                            </div>
+                            <!-- Contenedor Papel/Cartón -->
+                            <div class="trash-bin bin-paper" data-bin="paper">
+                                <div class="bin-cap"></div>
+                                <div class="bin-body">
+                                    <span class="bin-icon">📦</span>
+                                    <span class="bin-title">Papel / Cartón</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="waste-conveyor-belt">
+                            <div id="waste-item-container">
+                                <div class="game-intro-overlay" id="game-overlay">
+                                    <h3>♻️ ¡Bienvenido al Eco-Clasificador!</h3>
+                                    <p>Arrastra los desechos que aparecen en la cinta transportadora hacia el tacho correcto, o haz clic en el objeto y luego en el tacho para reciclar.</p>
+                                    <p><strong>¡Consigue la mayor puntuación antes de que se acabe el tiempo!</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- APP 4: CUERPO HUMANO -->
+                <div id="subapp-human-body" class="subapp-content">
+                    <div class="anatomy-layout">
+                        <div class="anatomy-visualization">
+                            <!-- SVG Interactivo del Cuerpo Humano -->
+                            <svg viewBox="0 0 300 550" class="human-body-svg">
+                                <defs>
+                                    <linearGradient id="body-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="rgba(139, 92, 246, 0.1)" />
+                                        <stop offset="100%" stop-color="rgba(59, 130, 246, 0.2)" />
+                                    </linearGradient>
+                                    <filter id="glow-effect" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="5" result="blur" />
+                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                    </filter>
+                                </defs>
+
+                                <!-- Silueta del Cuerpo Humano -->
+                                <path d="M150,20 C180,20 185,55 185,75 C185,85 190,95 205,105 C220,115 240,135 250,165 C260,195 255,250 250,290 C245,330 240,360 245,390 C250,420 255,480 250,510 C245,540 230,545 220,545 C210,545 195,510 185,450 C175,390 170,360 170,340 L160,340 L160,510 C160,535 145,545 135,545 C125,545 115,535 115,510 L115,340 L105,340 C105,360 100,390 90,450 C80,510 65,545 55,545 C45,545 30,540 25,510 C20,480 25,420 30,390 C35,360 30,330 25,290 C20,250 15,195 25,165 C35,135 55,115 70,105 C85,95 90,85 90,75 C90,55 95,20 150,20 Z" 
+                                      fill="url(#body-gradient)" stroke="var(--body-outline)" stroke-width="2" class="body-silhouette" />
+
+                                <!-- ÓRGANO: Cerebro -->
+                                <g class="organ-interactive" data-organ="cerebro">
+                                    <!-- Círculo de hotspot -->
+                                    <circle cx="150" cy="55" r="30" class="organ-hotspot" />
+                                    <!-- Dibujo básico del Cerebro en SVG -->
+                                    <path d="M138,45 C132,48 132,58 138,62 C135,66 142,72 148,68 C152,72 159,66 156,62 C162,58 162,48 156,45 C159,40 152,34 148,38 C142,34 135,40 138,45 Z" 
+                                          class="organ-shape color-cerebro" />
+                                    <text x="150" y="55" class="organ-label-text">🧠</text>
+                                    <circle cx="150" cy="55" r="4" fill="#ff79c6" class="organ-dot-pulse" />
+                                </g>
+
+                                <!-- ÓRGANO: Pulmones -->
+                                <g class="organ-interactive" data-organ="pulmones">
+                                    <circle cx="150" cy="150" r="42" class="organ-hotspot" />
+                                    <!-- Pulmón Izquierdo -->
+                                    <path d="M125,120 C105,120 100,165 125,180 C135,180 142,165 142,140 Z" class="organ-shape color-pulmon" />
+                                    <!-- Pulmón Derecho -->
+                                    <path d="M175,120 C195,120 200,165 175,180 C165,180 158,165 158,140 Z" class="organ-shape color-pulmon" />
+                                    <text x="150" y="152" class="organ-label-text">🫁</text>
+                                    <circle cx="130" cy="150" r="4" fill="#8be9fd" class="organ-dot-pulse" />
+                                    <circle cx="170" cy="150" r="4" fill="#8be9fd" class="organ-dot-pulse" />
+                                </g>
+
+                                <!-- ÓRGANO: Corazón -->
+                                <g class="organ-interactive" data-organ="corazon">
+                                    <circle cx="153" cy="148" r="22" class="organ-hotspot" />
+                                    <path d="M153,138 C150,135 142,135 142,143 C142,151 153,158 153,161 C153,158 164,151 164,143 C164,135 156,135 153,138 Z" 
+                                          class="organ-shape color-corazon" />
+                                    <text x="153" y="150" class="organ-label-text-mini">❤️</text>
+                                    <circle cx="153" cy="148" r="4" fill="#ff5555" class="organ-dot-pulse" />
+                                </g>
+
+                                <!-- ÓRGANO: Estómago -->
+                                <g class="organ-interactive" data-organ="estomago">
+                                    <circle cx="150" cy="225" r="30" class="organ-hotspot" />
+                                    <path d="M135,210 C120,215 125,245 145,245 C165,245 170,225 155,210 C150,205 140,205 135,210 Z" 
+                                          class="organ-shape color-estomago" />
+                                    <text x="150" y="228" class="organ-label-text">🍕</text>
+                                    <circle cx="147" cy="225" r="4" fill="#ffb86c" class="organ-dot-pulse" />
+                                </g>
+                            </svg>
+                        </div>
+
+                        <div class="anatomy-info glassmorphism">
+                            <div id="organ-details">
+                                <div class="info-placeholder">
+                                    <span class="info-placeholder-icon">🫁</span>
+                                    <h3>Explorador del Cuerpo</h3>
+                                    <p>Haz clic en los puntos brillantes (latientes) del cuerpo humano para realizar una biopsia de conocimiento y revelar datos fantásticos sobre cada órgano vital.</p>
+                                </div>
+                            </div>
+
+                            <div class="anatomy-fun-fact" id="anatomy-fun-fact-box" style="display:none;">
+                                <h4>💡 ¿Sabías qué?</h4>
+                                <p id="anatomy-fact-text">El cerebro produce suficiente electricidad como para encender una pequeña bombilla de luz LED.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 🪐 SciTech Kids - Escuela Primaria de Ciencia y Tecnología. Creado con ❤️ para pequeños investigadores.</p>
+            <div class="footer-seo-links">
+                <span>#AprendizajeDivertido</span>
+                <span>#FísicaParaNiños</span>
+                <span>#AstronomíaPrimaria</span>
+                <span>#CuidadoDelMedioAmbiente</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
